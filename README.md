@@ -1,71 +1,123 @@
-# code-security README
+# 🔐 vscode-aisec
 
-This is the README for your extension "code-security". After writing up a brief description, we recommend including the following sections.
+**vscode-aisec** is a Visual Studio Code extension that integrates AI-powered security analysis into your coding workflow. It uses [Ollama](https://ollama.com) to analyze selected code snippets for potential security vulnerabilities, bad practices, and insecure coding patterns.
 
-## Features
+## ✨ Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- ✅ **Analyze Selected Code**  
+  Select code or a line and instantly get an AI-generated security analysis.
 
-For example if there is an image subfolder under your extension project workspace:
+- 💬 **Interactive Follow-up Q&A**  
+  Ask follow-up questions inside a custom webview for deeper insights.
 
-\!\[feature X\]\(images/feature-x.png\)
+- 🧠 **Powered by Ollama LLM**  
+  Uses local models via Ollama (e.g., `gemma3:1b`) for fast, private code analysis.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- 📄 **Markdown-formatted Responses**  
+  Clear, beautifully formatted AI responses with syntax highlighting and tips.
 
-## Requirements
+## 📸 Demo
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+![Demo GIF](demo.gif)
 
 ---
 
-## Following extension guidelines
+## 🚀 Getting Started
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+### 1. Prerequisites
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+- VS Code 1.85+
+- Node.js & npm
+- [Ollama installed and running locally](https://ollama.com)
 
-## Working with Markdown
+### 2. Install Dependencies
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+```bash
+npm install
+```
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+### 3. Compile and Launch the Extension
 
-## For more information
+```bash
+npm run watch
+```
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+Then press `F5` in VS Code to start a new Extension Development Host.
 
-**Enjoy!**
+---
+
+## 🧪 Usage
+
+1. Open any file in VS Code.
+2. Select a block of code or just place the cursor on a line.
+3. Open Command Palette (`Ctrl+Shift+P`) → Run `Analyze Selected Code`.
+4. View the analysis in the webview.
+5. Ask follow-up questions directly in the UI.
+
+---
+
+## 🛠️ Project Structure
+
+```
+src/
+├── extension.ts           # Entry point for the VS Code extension
+├── analyzeCode.ts         # Core logic for AI chat and streaming
+└── webview/               # HTML + JS for the UI
+media/
+└── marked.min.js          # Markdown parser
+```
+
+---
+
+## 🧠 Models & AI
+
+- Model: `gemma3:1b` (or your preferred Ollama-compatible LLM)
+- Conversation context retained for better follow-up answers.
+
+---
+
+## ⚙️ Configuration
+
+You can modify the model and other Ollama settings in `extension.ts`:
+```ts
+const stream = await ollama.chat({
+  model: 'gemma3:1b',
+  ...
+});
+```
+
+---
+
+## 📦 Packaging Extension
+
+```bash
+npm install -g @vscode/vsce
+vsce package
+```
+
+---
+
+## 📄 License
+
+MIT License © 2025 [Md Hafizur Rahman](https://github.com/mdhafizur)
+
+---
+
+## 🙌 Acknowledgements
+
+- [Ollama](https://ollama.com)
+- [VS Code Extension API](https://code.visualstudio.com/api)
+- [Marked.js](https://marked.js.org/)
+
+---
+
+## 💡 Future Ideas
+
+- Add multi-file analysis
+- Model selection dropdown
+- Integration with static code analysis tools (e.g., ESLint, Semgrep)
+- Security issue severity scoring
+
+---
+
+> ⚠️ This tool is meant for **developer assistance**. Always validate results manually or with expert review in production workflows.

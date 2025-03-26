@@ -66,9 +66,9 @@ async function analyzeCode(code: string, context: vscode.ExtensionContext) {
 		{
 			role: 'system',
 			content: `You are a secure code analyzer. Analyze code snippets for security vulnerabilities, 
-                     insecure patterns, or bad practices. Be concise but thorough. When users ask follow-up
-                     questions, provide detailed explanations and remediation advice. Format your responses
-                     using Markdown for better readability.`
+                    insecure patterns, or bad practices. Be concise but thorough. When users ask follow-up
+                    questions, provide detailed explanations and remediation advice. Format your responses
+                    using Markdown for better readability.`
 		}
 	];
 
