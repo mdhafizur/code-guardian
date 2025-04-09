@@ -1,0 +1,38 @@
+name: Publish Code Guardian
+
+on:
+  push:
+    tags:
+      - "v*.*.*" # e.g., v0.1.0 triggers release
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v3
+
+      - name: 🟢 Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      - name: 🧪 Type-check and lint
+        run: |
+          npm run check-types
+          npm run lint
+
+      - name: 🛠️ Build extension
+        run: npm run compile
+
+      - name: 📦 Package extension
+        run: npx vsce package
+
+      - name: 🚀 Publish to VS Code Marketplace
+        run: npx vsce publish -p ${{ secrets.VSCE_TOKEN }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.VSCE_TOKEN }}
