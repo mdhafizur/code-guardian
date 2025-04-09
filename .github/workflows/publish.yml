@@ -54,12 +54,6 @@ jobs:
       - name: 📦 Package extension
         run: npx vsce package
 
-      - name: ⬆️ Upload VSIX artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: code-guardian.vsix
-          path: "*.vsix"
-
       - name: 🚀 Publish to VS Code Marketplace
         run: npx vsce publish -p ${{ secrets.VSCE_TOKEN }} --no-verify
         env:
