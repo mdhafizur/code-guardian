@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"module": "Node16",
+		"module": "commonjs", // required by VS Code extensions
 		"target": "ES2022",
 		"lib": [
 			"ES2022",
@@ -8,10 +8,22 @@
 		],
 		"sourceMap": true,
 		"rootDir": "src",
-		"strict": true,   /* enable all strict type-checking options */
-		/* Additional Checks */
-		// "noImplicitReturns": true, /* Report error when not all code paths in function return a value. */
-		// "noFallthroughCasesInSwitch": true, /* Report errors for fallthrough cases in switch statement. */
-		// "noUnusedParameters": true,  /* Report errors on unused parameters. */
-	}
+		"outDir": "out", // VS Code expects compiled output here
+		"strict": true,
+		/* Recommended Additional Checks */
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"noUnusedParameters": true,
+		/* Required for VS Code + Node development */
+		"moduleResolution": "node",
+		"esModuleInterop": true,
+		"types": [
+			"node",
+			"vscode",
+			"mocha"
+		]
+	},
+	"include": [
+		"src"
+	]
 }

@@ -10,7 +10,7 @@ export function provideFixes(): vscode.CodeActionProvider {
 		 * This method is triggered by VS Code when it wants to know what fixes are available for a given range.
 		 * It receives the current document, the selected range, and diagnostics affecting that range.
 		 */
-		provideCodeActions(document, range, context) {
+		provideCodeActions(document, _range, context) {
 			const actions: vscode.CodeAction[] = [];
 
 			for (const diagnostic of context.diagnostics) {
