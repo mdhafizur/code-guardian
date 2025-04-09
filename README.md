@@ -1,6 +1,6 @@
-# 🔐 code-guardian
+# 🔐 Code Guardian
 
-**code-guardian** is a Visual Studio Code extension that integrates AI-powered security analysis into your coding workflow. It uses [Ollama](https://ollama.com) to analyze JavaScript and TypeScript code for potential security vulnerabilities, bad practices, and insecure coding patterns.
+**Code Guardian** is a Visual Studio Code extension that integrates AI-powered security analysis into your coding workflow. It uses [Ollama](https://ollama.com) to analyze JavaScript and TypeScript code for potential security vulnerabilities, bad practices, and insecure coding patterns.
 
 ## ✨ Features
 
