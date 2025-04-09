@@ -1,0 +1,126 @@
+body {
+    font-family: "Segoe UI", sans-serif;
+    padding: 1rem;
+    color: #dcdcdc;
+    background-color: #1e1e1e;
+    line-height: 1.5;
+}
+pre {
+    background: #2d2d2d;
+    padding: 1em;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+h2 {
+    color: #4ec9b0;
+    margin-top: 1.5em;
+}
+.highlight {
+    color: #f44747;
+}
+.message {
+    margin-bottom: 1.5em;
+    border-left: 3px solid #4ec9b0;
+    padding-left: 1em;
+}
+.message.user {
+    border-left-color: #569cd6;
+}
+.message.error {
+    border-left-color: #f44747;
+}
+.role {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+#conversation {
+    margin-bottom: 1.5em;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 0.5em;
+}
+#questionInput {
+    width: 100%;
+    padding: 0.5em;
+    background: #2d2d2d;
+    color: #dcdcdc;
+    border: 1px solid #3e3e3e;
+    border-radius: 4px;
+    margin-bottom: 0.5em;
+    min-height: 60px;
+    resize: vertical;
+}
+button {
+    background: #0e639c;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover {
+    background: #1177bb;
+}
+button:disabled {
+    background: #3e3e3e;
+    cursor: not-allowed;
+}
+.spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+.hidden {
+    display: none;
+}
+/* Markdown styling */
+.markdown pre {
+    background: #2d2d2d;
+    padding: 1em;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+.markdown code {
+    background: #2d2d2d;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+}
+.markdown blockquote {
+    border-left: 4px solid #4ec9b0;
+    margin: 0 0 1em 0;
+    padding-left: 1em;
+    color: #9cdcfe;
+}
+.markdown table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1em;
+}
+.markdown th, .markdown td {
+    border: 1px solid #3e3e3e;
+    padding: 0.5em;
+}
+.markdown th {
+    background-color: #252526;
+}
+/* Scrollbar styling */
+#conversation::-webkit-scrollbar {
+    width: 8px;
+}
+#conversation::-webkit-scrollbar-track {
+    background: #2d2d2d;
+}
+#conversation::-webkit-scrollbar-thumb {
+    background: #4ec9b0;
+    border-radius: 4px;
+}

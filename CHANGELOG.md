@@ -1,9 +1,33 @@
-# Change Log
+# 📦 Changelog
 
-All notable changes to the "code-security" extension will be documented in this file.
+All notable changes to this project will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)  
+and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+---
 
-- Initial release
+## [1.0.0] – 2025-04-10
+
+### 🚀 Initial Release
+
+- ✅ **AI-powered security analysis** using local models (via Ollama).
+- ✅ **Auto-scans functions in real time** during development.
+- ✅ **Interactive full-file analysis** with command palette.
+- ✅ **Quick Fix support** with lightbulb suggestions and editable secure code.
+- ✅ **Markdown-rendered webview** for follow-up questions and rich formatting.
+- ✅ Integration with **`gemma3:1b`**, fully offline and privacy-respecting.
+- ✅ Built-in fallback handling and diagnostic error safety.
+- ✅ File size-based throttle for performance protection.
+
+---
+
+## 🚧 In Progress
+
+- [ ] Severity scoring per vulnerability
+- [ ] Workspace-wide scan support
+- [ ] Custom model selector (UI-based)
+- [ ] Optional integration with Semgrep / ESLint
+- [ ] Exportable reports (JSON / Markdown)
+- [ ] Custom security rules and policies
+- [ ] Offline mode with cached analysis patterns
