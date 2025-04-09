@@ -55,6 +55,6 @@ jobs:
         run: npx vsce package
 
       - name: 🚀 Publish to VS Code Marketplace
-        run: npx vsce publish -p ${{ secrets.VSCE_TOKEN }} --no-verify
+        run: npx vsce publish -p ${{ secrets.VSCE_TOKEN }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.VSCE_TOKEN }}
